@@ -1,0 +1,17 @@
+<component name="InspectionProjectProfileManager">
+  <profile version="1.0">
+    <option name="myName" value="Project Default" />
+    <inspection_tool class="PyUnresolvedReferencesInspection" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="ignoredIdentifiers">
+        <list>
+          <option value="travelproject.settings.BASE_DIR" />
+          <option value="travelproject.urls.static" />
+          <option value="tripapp.views.HttpsResponse" />
+          <option value="Tapp.models.picture.objects" />
+          <option value="Tapp.models.place.objects" />
+          <option value="cv2.*" />
+        </list>
+      </option>
+    </inspection_tool>
+  </profile>
+</component>

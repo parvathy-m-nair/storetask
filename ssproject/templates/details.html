@@ -1,0 +1,162 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DETAILS VERIFICATION</title>
+    </head>
+<div align="center">
+    <div>
+    <center>
+<img src="{% static 'img/logo.png' %}" alt="logimage" width="100px;" > </center></div>
+<h1>DETAILS VERIFICATION</h1></div>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <body bgcolor="teal">
+
+    <div style="text-align:left;">
+
+<form enctype="text/plain" action="details" method="get">
+
+<script>
+var subjectObject = {
+    "ARTS STREAM": {
+    "BA ENGLISH": ["ENG", "LIT", "NOV"],
+    "BA MALAYALAM": ["MAL", "REG", "SUB"],
+    "BA SANSKRIT": ["HIN", "SAN", "DEV"]
+
+  },
+  "SCIENCE STREAM": {
+    "BSC PHYSICS": ["MAT", "CHE", "ENG"],
+    "BSC ZOOLOGY": ["CHE", "BOT", "ENG"],
+    "BSC MATHS": ["INT", "DEF", "MAT"]
+  },
+  "COMMERCE STREAM ":{
+  "B.COM" :["AC","COM","CA"],
+  "M.COM" : ["CA","NC","SUB"],
+  "BBA" : ["AC","MAT","SUB"]
+  },
+  "MEDICINE" :{
+  "MEDICAL": ["PSY","ENT","BPA"],
+  "BDS" : ["NMK","POU","HJK"],
+  "MD" : ["MNK","HGD","GTY"]
+
+  },
+  "ENGINEERING" :{
+  "EEE":["MAT","ELE","CS"],
+  "CIVIL" : ["GEO","ENH","HJK"]
+
+   },
+"EDUCATION AND HUMANDEVELOPNMENT" :{
+  "ENV":["VNV","NMKU","BPA"],
+  "RESOURCES AND SUPPORT SYSTEM" : ["NMK","POU","HJK"]
+  }
+}
+window.onload = function() {
+  var subjectSel = document.getElementById("subject");
+  var topicSel = document.getElementById("topic");
+  var chapterSel = document.getElementById("chapter");
+  for (var x in subjectObject) {
+    subjectSel.options[subjectSel.options.length] = new Option(x, x);
+  }
+  subjectSel.onchange = function() {
+    //empty Chapters- and Topics- dropdowns
+    chapterSel.length = 1;
+    topicSel.length = 1;
+    //display correct values
+    for (var y in subjectObject[this.value]) {
+      topicSel.options[topicSel.options.length] = new Option(y, y);
+    }
+  }
+  topicSel.onchange = function() {
+    //empty Chapters dropdown
+    chapterSel.length = 1;
+    //display correct values
+    var z = subjectObject[subjectSel.value][this.value];
+    for (var i = 0; i < z.length; i++) {
+      chapterSel.options[chapterSel.options.length] = new Option(z[i], z[i]);
+    }
+  }
+}
+</script>
+
+
+
+
+
+    USER NAME :
+    <input type="text" name="username" size="12" maxlength="12"/>
+    <p>
+    AGE  :
+    <input type="number" name="uage" size="12" maxlength="5"/></p>
+    <p>
+    GENDER :
+        <input type="radio" name="gender" value="male"/> Male
+        <input type="radio" name="gender" value="female"/> Female
+    </p>
+
+    <tr>
+        <td>
+           PHONE NO:
+        </td>
+        <td><input type="text" name="phoneno" size="20"/></td>
+    </tr>
+    <tr>
+        <td>
+            MAIL ID :
+        </td>
+        <td><input type="email" name="email" size="40" /></td>
+    </tr>
+    <p>
+        ENTER YOUR ADDRESS :
+
+        <textarea name="address" rows="6" cols="50" wrap="" ></textarea>
+    </p>
+    <p>
+     <body>
+
+
+
+<form name="form1" id="form1" action="/action_page.php">
+Departnment: <select name="subject" id="subject">
+    <option value="" selected="selected">Select subject</option>
+  </select>
+  <br><br>
+Courses: <select name="topic" id="topic">
+    <option value="" selected="selected">Please select subject first</option>
+  </select>
+  <br><br>
+SUBJECT: <select name="chapter" id="chapter" >
+    <option value="" selected=""></option>
+  </select>
+  <br><br>
+
+
+    <p> PURPOSE :
+        <input type="checkbox" name="addons" value="enquiry"/> Enquiry
+        <input type="checkbox" name="addons" value="place order"/> PlaceOrder
+        <input type="checkbox" name="addons" value=" verification"/> Verification
+        <input type="checkbox" name="addons" value="general view"/> GeneralVIEW
+    </p>
+    <p>
+        MATERIALS PROVIDE :
+        <input type="checkbox" name="material" value="pen" />Pen
+        <input type="checkbox" name="material" value="pencil" />Pencil
+        <input type="checkbox" name="material" value="printed notes" />PrintedNotes
+        <input type="checkbox" name="material" value="reffering books" />ReferingBooks
+    </p>
+    <button type="submit" value="submit" name="submit"
+            style="font:18pt Helvetica; background:green">
+        <a  href="{% url 'login:order' %}"> Submit</a>
+
+    </button>
+     <button type="submit" value="submit" name="submit"
+            style="font:18pt Helvetica; background:red">
+         Logout
+     </button>
+
+
+    </div>
+</form>
+</body>
+</html>

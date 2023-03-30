@@ -1,0 +1,103 @@
+
+
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+</head>
+<body bgcolor="teal">
+
+<div>
+    <center>
+<img src="{% static 'img/logo.png' %}" alt="logimage" width="100px;" > </center></div>
+<div align="center"><h1> A.J Login Portal</h1></div>
+<form action="login" method="post">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+
+
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+
+
+   {% csrf_token %}
+
+  <div class="form-center" align="center">
+    <input type="text" name="username" id="form2Example1" class="form-control" maxlength="35" size="18" />
+    <label class="form-label" for="form2Example1">USERNAME</label>
+  </div>
+
+<p>
+  <div class="form-outline mb-4" align="center" maxlength="35" size="15" >
+    <input type="password" name="password" id="form2Example2" class="form-control" />
+    <label class="form-label" for="form2Example2">PASSWORD</label>
+  </div>
+</p>
+  <!-- 2 column grid layout for inline styling -->
+  <p>
+  <div class="row mb-4">
+    <div class="col d-flex justify-content-center" align="center">
+      <!-- Checkbox -->
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="form2Example31" checked />
+        <label class="form-check-label" for="form2Example31"> Remember me </label>
+      </div>
+    </div>
+</p>
+
+  <!-- Submit button -->
+  <div align="center">
+  <button type="submit" class="btn btn-primary btn-block mb-4" style="background:green;font:18pt Helvetica">SignIn</button>
+   </div>
+    <div class="text-center"  align="center">
+        <p><h2>Welcome to A.J SignIn Portal </h2><a href="#!"></a></p>
+    <p><h2>or sign up with:</h2><a  href="{% url 'login:register'  %}"></a></p>
+
+<div align="center">
+    <button type="button" class="btn btn-link btn-floating mx-1" >
+      <i class="fab fa-facebook-f"></i>
+    </button>
+  </div>
+  </div>
+  <div align="center">
+    <button type="button" class="btn btn-link btn-floating mx-1" >
+      <i class="fab fa-google"></i>
+    </button>
+    </div>
+<div align="center">
+    <button type="button" class="btn btn-link btn-floating mx-1" >
+      <i class="fab fa-twitter"></i>
+    </button>
+<div align="center"></div>
+    <button type="button" class="btn btn-link btn-floating mx-1">
+      <i class="fab fa-github"></i>
+    </button>
+  </div>
+
+  </div>
+</form>
+</body>
+</html>
+
+
+
+
+
+
+
+<!--<form action="login" method="post">-->
+<!--    <link rel="stylesheet" href="{% static 'style.css' %}">-->
+<!--    {% csrf_token %}-->
+<!--    <input type="text" name="username" placeholder="USER NAME"> <br>-->
+<!--    <input type="password" name="password" placeholder="PASSWORD">-->
+<!--    <br>-->
+
+<!--    <input type="submit">-->
+
+
+
+
+<!--</form>-->
+

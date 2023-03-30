@@ -1,0 +1,93 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block metadescription %}
+
+ Welcome to A.J schools..
+
+{% endblock %}
+{% block title %}
+{% if category %}
+   {{ category.name }} - A.J SCHOOLS
+{% else %}
+ Home
+{% endif %}
+{% endblock %}
+{% block content %}
+{% if category %}
+<div>
+    <div class="row my_row_class">
+        <div class="mx-auto">
+            <p><a href="{% url 'work:allProdCat' %}">COURSES OFFERED</a></p>
+    </div>
+</div>6z
+{% endif %}
+<div class="mx-auto">
+    <br>
+    <div>
+        <img  src="{% static 'img/banner.png' %}" alt="our courses" width="1120px;">
+    </div>
+    <div>
+        <h1 class="text-center my_title">A.J schools</h1>
+        <p class="text-justify">Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.
+        </p>
+
+        <div>
+            <p>
+                <h1>Explore all the Courses, Examinations, Research Activities, UGC Projects</h1>
+            </p>
+        </div>
+        <div >
+
+    <img src="{% static 'img/card1.jpg' %}" alt="Snow" style="width:18%">
+
+
+    <img src="{% static 'img/card2.jpg' %}" alt="Forest" style="width:18% " >
+
+
+    <img src="{% static 'img/card3.jpg' %}" alt="Mountains" style="width:18% ">
+
+
+    <img src="{% static 'img/card4.jpg' %}" alt="Mountains" style="width:18% ">
+            <img src="{% static 'img/card6.jpg' %}" alt="Mountains" style="width:18% ">
+<!--            <img src="{% static 'img/card7.jpg' %}" alt="Mountains" style="width:20% ">-->
+
+
+
+</div>
+
+<div >
+    <pre style="color:blue; text-align:right;">
+        Contact Us
+A.J COLLEGE
+Kesavadasapuram, Pattom. PO.,
+Trivandrum - 695 004,
+Kerala, India
+Phone: +91 471 211 4465
+        </pre>
+</div>
+         <div align="left">
+
+                  About
+            the institution dedicated
+            to the memory of the Father of the
+            Nation was established in the year
+            1948 by the legendary social reformer
+            Bharatha Kesari Sri Mannathu Padmanabhan.
+            It is one of the largest and oldest
+            institutions of higher education in
+            the capital city of the state of
+            Kerala run by the largest educational
+            agency of Kerala, the Nair Service Society.
+            It functions with the objective of providing
+            value added.
+
+        </div>
+    </div>
+    <div>
+
+    </div>
+</div>
+</div>
+{% endblock %}
+
+
